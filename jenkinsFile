@@ -9,11 +9,10 @@ pipeline {
         stage('Clone') {
             steps {
                 sh '''
-                git clone https://github.com/dhruv93015/Calculator.git
-                '''
+                git clone https://github.com/dhruv93015/Calculator.git
+                '''
             }
         }
-        
         stage('Build') {
             steps {
                 sh '''
