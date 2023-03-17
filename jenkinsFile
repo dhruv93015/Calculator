@@ -1,18 +1,7 @@
 pipeline {
     agent any
     
-    triggers {
-        pollSCM '* * * * *'
-    }
-
     stages {
-        stage('Clone') {
-            steps {
-                sh '''
-                git clone https://github.com/dhruv93015/Calculator.git
-                '''
-            }
-        }
         stage('Build') {
             steps {
                 sh '''
