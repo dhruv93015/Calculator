@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+		ls -ltr
                 python3 Calculator/calculator.py
                 '''
             }
@@ -20,6 +21,15 @@ pipeline {
             steps {
                 echo 'Deployed'
             }
+        }
+    }
+    post {
+        // Clean after build
+        always {
+            cleanWs(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true)
         }
     }
 }
