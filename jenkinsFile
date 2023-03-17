@@ -5,15 +5,15 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-		ls -ltr
-                python3 Calculator/calculator.py
+                ls -ltr
+                python3 calculator.py
                 '''
             }
         }
         stage('Test') {
             steps {
                 sh '''
-                python3 Calculator/CalcTest.py 
+                python3 CalcTest.py 
                 '''
             }
         }
